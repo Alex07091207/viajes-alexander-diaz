@@ -1,38 +1,244 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fb;
+  color: #1e293b;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: #38bdf8;
+}
+
+.contenido {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0284c7, #1d4ed8);
+  color: #ffffff;
+  padding: 3.5rem 2rem;
+  border-radius: 12px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero p {
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.encabezado-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.badge-api {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge-rest {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge-graphql {
+  background-color: #fae8ff;
+  color: #86198f;
+}
+
+.grid-destinos,
+.grid-opciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-destino,
+.card-opcion {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
   display: flex;
   flex-direction: column;
+}
+
+.card-header,
+.opcion-top {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.card-header h3 {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pais {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.descripcion {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.lista-actividades {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 1.5rem;
+  color: #334155;
+  flex-grow: 1;
+}
+
+.lista-actividades li {
+  margin-bottom: 0.4rem;
+}
+
+.btn-primario,
+.btn-secundario,
+.btn-seleccionar {
+  display: inline-block;
+  text-align: center;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primario {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.btn-primario:hover {
+  background-color: #0369a1;
+}
+
+.hero .btn-primario {
+  background-color: #ffffff;
+  color: #0369a1;
+}
+
+.btn-secundario {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-seleccionar {
+  margin-top: auto;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.btn-seleccionar:disabled {
+  background-color: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.card-opcion.seleccionada {
+  border: 2px solid #0284c7;
+}
+
+.card-opcion.agotada {
+  opacity: 0.7;
+}
+
+.estado-ok {
+  color: #15803d;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.estado-no {
+  color: #b91c1c;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin: 0.75rem 0 1rem;
+}
+
+.bloque-opciones {
+  margin-bottom: 2.5rem;
+}
+
+.link-volver {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.resumen-viaje {
+  background-color: #eff6ff;
+  border-left: 5px solid #0284c7;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+}
+
+.mensaje-estado,
+.mensaje-error {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.mensaje-error {
+  color: #b91c1c;
 }
